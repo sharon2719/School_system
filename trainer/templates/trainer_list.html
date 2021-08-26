@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers List</title>
+</head>
+<body>
+    <style>
+        
+        body{
+            background-color: white;
+        }
+       #code{
+            width: 150px;
+            height: 100px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+        #trainerlist{
+            table-layout:auto;
+            border-collapse: collapse;
+            width: 100%;
+            border: 3px solid purple;
+
+        }
+       
+        #trainerlist td, #trainerlist th{
+            border: 3px solid burlywood;
+            padding: 8px;
+ 
+        }
+        #trainerlist tr:nth-child(even){
+            background-color:  #f2f2f2;
+        }
+        #trainerlist tr:hover{
+            background-color: #ddd;
+        }
+     
+        #trainerlist th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: purple;
+            color: white;
+            width: 30%;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    </style>
+    <img  id="code"src="https://akirachix.com/img/code-hive.png?_cchid=138194327577c036438d36774d26b056">
+    <h1>Trainers List</h1>
+    <table id="trainerlist">
+        <tr>
+            <th>Profile photo</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Email address</th>
+            <th>Phone number</th>
+            <th>Nationality</th>
+            <th>County/district</th>
+            <th>National ID</th>
+            <th>Gender</th>
+            <th>Bio</th>
+            <th>Contract</th>
+            <th>Date hired</th>
+            <th>Language</th>
+            <th>Course</th>
+      
+
+        </tr>
+        {% for trainer in trainers %}
+        <tr>
+            {% if trainer.profile_photo %}
+            <td><img  src="{{trainer.profile_photo.url}}" height="50" width="50"/></td>
+            {% endif %}
+            <td>{{ trainer.first_name }}</td>
+            <td>{{ trainer.last_name }}</td>
+            <td>{{ trainer.age }}</td>
+            <td>{{ trainer.email_address }}</td>
+            <td>{{ trainer.phone_number }}</td>
+            <td>{{ trainer.nationality }}</td>
+            <td>{{ trainer.county_or_district }}</td>
+            <td>{{ trainer.national_id }}</td>
+            <td>{{ trainer.gender }}</td>
+            <td>{{ trainer.bio }}</td>
+            <td>{{ trainer.contract }}</td>
+            <td>{{ trainer.date_hired }}</td>
+            <td>{{ trainer.languages }}</td>
+            <td>{{ trainer.course }}</td>
+      
+            
+        </tr>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>

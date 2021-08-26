@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: white;
+        }
+        #code{
+            width: 150px;
+            height: 100px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+        #studentlist{
+            border-collapse: collapse;
+            width: 80%;
+           
+
+        }
+        #studentlist td, #studentlist th{
+            border: 3px solid burlywood;
+            padding: 8px;
+ 
+        }
+        #studentlist tr:nth-child(even){
+            background-color:  #f2f2f2;
+        }
+        #studentlist tr:hover{
+            background-color: #ddd;
+        }
+        #studentlist th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: purple;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    </style>
+    <img id="code" src="https://akirachix.com/img/code-hive.png?_cchid=138194327577c036438d36774d26b056">
+    <h1>Students List</h1>
+    <table id="studentlist">
+        <tr>
+            <th>Profile photo</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Date of birth</th>
+            <th>Email address</th>
+            <th>Phone number</th>
+            <th>Nationality</th>
+            <th>National ID</th>
+            <th>Student ID</th>
+            <th>Roll number</th>
+            <th>Gender</th>
+            <th>Language</th>
+            <th>Guardian</th>
+            <th>County/district</th>
+            <th>Medical report</th>
+            <th>Grade</th>
+            <th>Date of enrollment</th>
+            <th>Course name</th>
+            <th>Laptop number</th>
+         
+
+        </tr>
+        {% for student in students %}
+        <tr>
+            {% if student.profile_photo %}
+
+            <td><img src="{{student.profile_photo.url}}" height="50" width="50"/></td>
+            {% endif %}
+            <td>{{ student.first_name }}</td>
+            <td>{{ student.last_name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.date_of_birth }}</td>
+            <td>{{ student.email_address }}</td>
+            <td>{{ student.phone_number }}</td>
+            <td>{{ student.nationality }}</td>
+            <td>{{ student.national_id }}</td>
+            <td>{{ student.student_id }}</td>
+            <td>{{ student.roll_number }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.language }}</td>
+            <td>{{ student.guardian_name }}</td>
+            <td>{{ student.county_or_district }}</td>
+            <td>{{ student.medical_report }}</td>
+            <td>{{ student.grade }}</td>
+            <td>{{ student.date_of_enrollment}}</td>
+            <td>{{ student.course_name }}</td>
+            <td>{{ student.laptop_number }}</td>
+         
+            
+        </tr>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>

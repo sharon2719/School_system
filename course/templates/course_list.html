@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses List</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color:white;
+        }
+        img{
+            width: 150px;
+            height: 100px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+        #courselist{
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+        #courselist td, #courselist th{
+            border: 3px solid burlywood;
+            padding: 8px;
+ 
+        }
+        #courselist tr:nth-child(even){
+            background-color:  #f2f2f2;
+        }
+        #courselist tr:hover{
+            background-color: #ddd;
+        }
+        #courselist th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: purple;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    </style>
+    <img src="https://akirachix.com/img/code-hive.png?_cchid=138194327577c036438d36774d26b056">
+    <h1>Courses List</h1>
+    <table id="courselist">
+        <tr>
+            <th>Course name</th>
+            <th>Course code</th>
+            <th>Course trainer</th>
+            <th>Course schedule</th>
+            <th>Syllabus</th>
+            <th>Time in hours</th>
+            <th>Course duration</th>
+           
+    
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.course_name}}</td>
+            <td>{{ course.course_code }}</td>
+            <td>{{ course.trainer }}</td>
+            <td>{{ course.schedule }}</td>
+            <td>{{ course.syllabus}}</td>
+            <td>{{ course.time_in_hours }}</td>
+            <td>{{ course.course_duration }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>
