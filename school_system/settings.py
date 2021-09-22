@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'trainer',
     'course',
     'school_calendar',
+    'core',
+    'rest_framework'
    
   
 ]

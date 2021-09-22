@@ -21,11 +21,15 @@ from django.conf import settings
 
 
 urlpatterns = [
+    path("",include('core.urls')),
     path('admin/', admin.site.urls),
     path('student/',include('student.urls')),
     path('trainer/',include('trainer.urls')),
     path('course/',include('course.urls')),
     path('school_calendar/',include('school_calendar.urls')),
+    path('api/',include("api.urls")),
+  
+
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

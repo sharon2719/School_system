@@ -6,5 +6,5 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    venue=models.CharField(max_length=12,default="AkiraChix")
+    venue=models.CharField(max_length=12)
 

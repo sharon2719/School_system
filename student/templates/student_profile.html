@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+  
+</head>
+<body>
+    <style>
+        body {
+    background-color: #f9f9fa
+    
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px
+}
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(purple), to(purple));
+    background: linear-gradient(to right, rgb(175, 122, 175), rgb(177, 112, 177))
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px;
+
+
+}
+
+.img-radius {
+    border-radius: 65px;
+    text-align: center;
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid burlywood
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid burlywood
+}
+
+.f-w-600 {
+    font-weight: 600;
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+.col-sm-4{
+    text-align: center;
+}
+    </style>
+    
+ 
+  
+    
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25"> <img src="{{student.profile_photo.url}}" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h2 class="f-w-600">{{student.full_name}}</h2>
+                                    <h5><td>{{ student.title }}</td></h5> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                     <a href="{% url 'edit_student' id=student.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                      </svg></i></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h3 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h3>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4 class="m-b-10 f-w-600">Date of birth</h4>
+                                            <h5 class="text-muted f-w-400">{{ student.date_of_birth }}</h5>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h4 class="m-b-10 f-w-600">Age</h4>
+                                                <h5 class="text-muted f-w-400">{{ student.age }} years old</h5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h4 class="m-b-10 f-w-600">Email address</h4>
+                                                    <h5 class="text-muted f-w-400">{{ student.email_address }}</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <h4 class="m-b-10 f-w-600">Phone number</h4>
+                                                        <h5 class="text-muted f-w-400">{{ student.phone_number }}</h5>
+                                                    </div>
+                                                    <h3 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">More information</h3>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <h4 class="m-b-10 f-w-600">Nationality</h4>
+                                                            <h5 class="text-muted f-w-400">{{ student.nationality }} </h5>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <h4 class="m-b-10 f-w-600">National ID</h4>
+                                                                <h5 class="text-muted f-w-400">{{ student.national_id }} </h5>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <h4 class="m-b-10 f-w-600">Student ID</h4>
+                                                                    <h5 class="text-muted f-w-400">{{ student.student_id }} </h5>
+                                                                </div>
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <h4 class="m-b-10 f-w-600">Roll number</h4>
+                                                                    <h5 class="text-muted f-w-400">{{ student.roll_number }} </h5>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <h4 class="m-b-10 f-w-600">Gender</h4>
+                                                                        <h5 class="text-muted f-w-400">{{ student.gender }}</h5>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6">
+                                                                            <h4 class="m-b-10 f-w-600">Language</h4>
+                                                                            <h5 class="text-muted f-w-400">{{ student.language }}</h5>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-6">
+                                                                                <h4 class="m-b-10 f-w-600">Guardian</h4>
+                                                                                <h5 class="text-muted f-w-400">{{ student.guardian_name }}</h5>
+                                                                            </div>
+                                                                            
+                                                    <h3 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Other information</h3>
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                    <h4 class="m-b-10 f-w-600">County/district</h4>
+                                                                                    <h5 class="text-muted f-w-400">{{ student.county_or_district }}</h5>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-6">
+                                                                                        <h4 class="m-b-10 f-w-600">Medical report</h4>
+                                                                                        <h5 class="text-muted f-w-400">{{ student.medical_report }}</h5>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <h4 class="m-b-10 f-w-600">Grade</h4>
+                                                                                            <h5 class="text-muted f-w-400">{{ student.grade }}</h5>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <h4 class="m-b-10 f-w-600">Date of enrollment</h4>
+                                                                                                <h5 class="text-muted f-w-400">{{ student.date_of_enrollment }}</h5>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-sm-6">
+                                                                                                    <h4 class="m-b-10 f-w-600">Course name</h4>
+                                                                                                    <h5 class="text-muted f-w-400">{{ student.course_name }}</h5>
+                                                                                                </div>
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <h4 class="m-b-10 f-w-600">Laptop number</h4>
+                                                                                                        <h5 class="text-muted f-w-400">{{ student.laptop_number }}</h5>
+                                                                                                    </div>
+                                                                                                    
+                                                                        
+                                
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

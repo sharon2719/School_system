@@ -8,6 +8,7 @@ class Student(models.Model):
     profile_photo=models.ImageField(upload_to="pictures/",null=True)
     first_name=models.CharField(max_length=12,null=True)
     last_name=models.CharField(max_length=12,null=True)
+    title=models.CharField(max_length=20,null=True)
     age=models.PositiveSmallIntegerField(null=True)
     date_of_birth=models.DateField(null=True)
     email_address=models.EmailField(null=True)
@@ -38,3 +39,5 @@ class Student(models.Model):
     course_name=models.CharField(max_length=30,null=True)
     laptop_number=models.CharField(max_length=15,null=True)
     
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}" 

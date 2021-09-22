@@ -7,6 +7,7 @@ class Trainer(models.Model):
     profile_photo=models.ImageField(upload_to='pictures/',null=True)
     first_name=models.CharField(max_length=12)
     last_name=models.CharField(max_length=12)
+    title=models.CharField(max_length=40,null=True)
     age=models.PositiveSmallIntegerField()
     email_address=models.EmailField()
     phone_number=models.CharField(max_length=13)
@@ -25,3 +26,5 @@ class Trainer(models.Model):
     languages=models.CharField(max_length=30)
     course=models.CharField(max_length=20)
  
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}" 

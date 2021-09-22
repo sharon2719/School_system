@@ -51,9 +51,13 @@
     <h1>Students List</h1>
     <table id="studentlist">
         <tr>
+           
+            <th>Profile</th>
+            <th>Edit </th>
             <th>Profile photo</th>
             <th>First name</th>
             <th>Last name</th>
+            <th>Title</th>
             <th>Age</th>
             <th>Date of birth</th>
             <th>Email address</th>
@@ -75,13 +79,20 @@
 
         </tr>
         {% for student in students %}
+    
         <tr>
+            
+            <td><a href="{% url 'student_profile' id=student.id %}">Profile</a></td>
+            
+            <td><a href="{% url 'edit_student' id=student.id %}">Edit</a></td>
+ 
             {% if student.profile_photo %}
-
             <td><img src="{{student.profile_photo.url}}" height="50" width="50"/></td>
             {% endif %}
+
             <td>{{ student.first_name }}</td>
             <td>{{ student.last_name }}</td>
+            <td>{{ student.title }}</td>
             <td>{{ student.age }}</td>
             <td>{{ student.date_of_birth }}</td>
             <td>{{ student.email_address }}</td>

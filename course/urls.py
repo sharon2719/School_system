@@ -1,12 +1,10 @@
-from .views import register_course,course_list
+from .views import register_course,course_list,edit_course,course_profile
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns=[
     path('register/',register_course,name='register_course'),
     path('list/',course_list,name="course_list"),
+    path('profile/<int:id>/',course_profile,name="course_profile"),
+    path('edit/<int:id>/',edit_course,name="edit_course"),
 ]
 
-if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
